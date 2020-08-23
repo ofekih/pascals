@@ -21,7 +21,7 @@ def search(row_limit: int, minimum_counts: int = 5) -> [(int, int)]:
             nCr //= r
             counts[nCr] += 1
 
-    # Below I am checking how many times each distinct number appears in the cells we've generated. If a number appears more than four times, print it.
+    # Below I am checking how many times each distinct number appears in the cells we've generated. If a number appears at least minimum_counts times, return it.
 
     matches = list()
 
@@ -37,7 +37,7 @@ def search(row_limit: int, minimum_counts: int = 5) -> [(int, int)]:
 if __name__ == '__main__':
     start_time = time.time()
 
-    matches = search(3001, 5)
+    matches = search(2001)
 
     for entry, frequency in matches:
         print(f"The number {entry:,} appears at least {frequency} times across the whole triangle")
